@@ -15,14 +15,18 @@ $("input").click(function() {
     if (turn === 0) {
       $(this).attr("value", player1);
       turn = 1;
+      checkTie();
+        checkWinnder();
     } else if (turn === 1) {
       $(this).attr("value", player2);
       turn = 0;
+      checkTie();
+        checkWinnder();
     }
   }
   console.log($(this).attr("value"));
-  checkWinnder();
-  checkTie();
+
+
 });
 
 
@@ -151,9 +155,9 @@ function clicked(id) {
 
 }
 
-function checkTie(){
+function checkTie() {
   numOfClicks++;
-  if(numOfClicks === 9){
+  if (numOfClicks === 9) {
     $("h1").text("Its A Tie");
   }
 }
